@@ -1,18 +1,20 @@
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()"> 
-    <div> 
-        <label for="name"> Name </label> 
-        <input id="name" type="text" value="nome" formControlName="name"> 
-        </div> <div> 
-        <label for="lastname"> lastname </label>
-         <input id="lastname" type="text" value="lastname" formControlName="lastname"> 
-        </div>
+<div *ngIf="p">
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()"> 
         <div> 
-            <label for="email"> email </label>
-             <input id="email" type="email" value="email" formControlName="email"> 
+            <label for="name"> Name </label> 
+            <input id="name" type="text" [(ngModel)]="p.name" formControlName="name"> 
+            </div> <div> 
+            <label for="lastname"> lastname </label>
+             <input id="lastname" type="text" [(ngModel)]="p.lastname" formControlName="lastname"> 
             </div>
             <div> 
-                <label for="eta"> eta </label>
-                 <input id="eta" type="number" value="eta" formControlName="eta"> 
+                <label for="email"> email </label>
+                 <input id="email" type="email" [(ngModel)]="p.email" formControlName="email"> 
                 </div>
-     <button class="button" type="submit" >Purchase</button> 
-    </form>
+                <div> 
+                    <label for="eta"> eta </label>
+                     <input id="eta" type="number" [(ngModel)]="p.eta" formControlName="eta"> 
+                    </div>
+         <button class="button" type="submit" >Modifica</button> 
+        </form>
+</div>

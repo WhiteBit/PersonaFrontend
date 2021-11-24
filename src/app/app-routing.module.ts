@@ -7,7 +7,7 @@ import { ModificaPersonaComponent } from './modifica-persona/modifica-persona.co
 const routes: Routes = [
   {path: "", component: HomeComponent},
   {path: "listapersone", component: ListapersoneComponent},
-  {path: "modifica", component: ModificaPersonaComponent},
+  {path: 'modifica/:id', component: ModificaPersonaComponent},
 ];
 
 @NgModule({

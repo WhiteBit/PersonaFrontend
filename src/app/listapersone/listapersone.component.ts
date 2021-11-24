@@ -19,4 +19,8 @@ export class ListapersoneComponent implements OnInit {
   getPersona(){
     return this.personaService.getPersona().subscribe(persone => this.persone = persone);
   }
+
+  eliminaPersona(id:number){
+    return this.personaService.eliminaPersona(id).subscribe(() => this.getPersona())
+  }
 }

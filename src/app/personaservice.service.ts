@@ -7,6 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class PersonaserviceService {
 
+  httpOptions = {
+    headers: new HttpHeaders(
+    { 'Content-Type': 'application/json' }
+    ),
+    };
   
   constructor(private http: HttpClient) { }
 
@@ -14,4 +19,10 @@ export class PersonaserviceService {
     return this.http.get<Persona[]>("http://localhost:8080/persona/visualizza");
   }
 
+  eliminaPersona(id:number): Observable<Persona>{
+     return this.http.delete<Persona>(`http://localhost:8080/persona/delete/${id}`, this.httpOptions);
+  }
+  modificaPersona(p: Persona): Observable<Persona>{
+    return this.http.post<Persona>(`http://localhost:8080/persona/modifica`, p ,this.httpOptions);
+  }
 }

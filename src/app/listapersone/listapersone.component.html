@@ -7,8 +7,8 @@
         <span>Cognome: {{pers.lastname}}</span><br>
         <span>Email: {{pers.email}}</span><br>
         <span>Età: {{pers.eta}}</span><br>
-        <button (click)>Modifica</button>
-        <button>Elimina</button>
+        <button routerLink="/modifica">Modifica</button>
+        <button (click)="eliminaPersona(pers.id)">Elimina</button>
     </li>
 </ul>
 </div>

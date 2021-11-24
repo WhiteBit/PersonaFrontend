@@ -1,0 +1,16 @@
+<h1>Lista delle persone</h1>
+<div *ngFor="let pers of persone"> 
+    <ul>
+    <li>
+        <span>Id: {{pers.id}}</span><br>
+        <span>Nome: {{pers.name}}</span><br>
+        <span>Cognome: {{pers.lastname}}</span><br>
+        <span>Email: {{pers.email}}</span><br>
+        <span>Età: {{pers.eta}}</span><br>
+        <button (click)>Modifica</button>
+        <button>Elimina</button>
+    </li>
+</ul>
+</div>
+
+

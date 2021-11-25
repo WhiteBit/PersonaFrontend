@@ -1,0 +1,27 @@
+<p>ricerca-persona works!</p>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <div>
+        <a>Inserisci nome</a>
+        <input id="name" type="text" formControlName="name"><br>
+        <a>Inserisci cognome</a>
+        <input id="lastname" type="text" formControlName="lastname"><br>
+        <a>Inserisci età</a>
+        <input id="eta" type="text" formControlName="eta">
+    </div>
+    <br>
+    <button class="button" type="submit">Ricerca</button>
+</form>
+
+<div *ngFor="let pers of persone"> 
+    <ul>
+        <li>
+            <span>Id: {{pers.id}}</span><br>
+            <span>Nome: {{pers.name}}</span><br>
+            <span>Cognome: {{pers.lastname}}</span><br>
+            <span>Email: {{pers.email}}</span><br>
+            <span>Età: {{pers.eta}}</span><br>            
+        </li>
+    </ul>
+</div>
+

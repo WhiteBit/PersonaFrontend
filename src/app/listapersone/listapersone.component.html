@@ -1,4 +1,4 @@
-<h1>Lista delle persone</h1> <button routerLink="/">Home</button>
+<h1>Lista delle persone</h1> 
 <div *ngFor="let pers of persone"> 
     <ul>
     <li>
@@ -7,8 +7,8 @@
         <span>Cognome: {{pers.lastname}}</span><br>
         <span>Email: {{pers.email}}</span><br>
         <span>Età: {{pers.eta}}</span><br>
-       <button [routerLink]="['/modifica',pers.id]">Modifica</button> <!-- Al click si va alla pagina modifica passandogli l'id per sapere quale persona modificare-->
         <div *ngIf="pers.id">
+            <button [routerLink]="['/modifica',pers.id]">Modifica</button> <!-- Al click si va alla pagina modifica passandogli l'id per sapere quale persona modificare-->
             <button (click)="eliminaPersona(pers.id)">Elimina</button>
         </div>
         

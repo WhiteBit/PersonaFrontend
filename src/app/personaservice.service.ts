@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Persona } from 'src/Persona';
 import { Observable } from 'rxjs';
@@ -33,6 +33,10 @@ export class PersonaserviceService {
 
   aggiungiPersona(p: Persona): Observable<Persona>{
     return this.http.post<Persona>("http://localhost:8080/persona/aggiungi", p, this.httpOptions);
+  }
+
+  ricercaPersone(nome: string, cognome: String, eta: String): Observable<Persona[]> {
+    return this.http.get<Persona[]>(`http://localhost:8080/persona/ricerca/nome/`);
   }
 
 }

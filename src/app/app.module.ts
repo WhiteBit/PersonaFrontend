@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ModificaPersonaComponent } from './modifica-persona/modifica-persona.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AggiungiPersonaComponent } from './aggiungi-persona/aggiungi-persona.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { RicercaPersonaComponent } from './ricerca-persona/ricerca-persona.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { AggiungiPersonaComponent } from './aggiungi-persona/aggiungi-persona.co
     ListapersoneComponent,
     HomeComponent,
     ModificaPersonaComponent,
-    AggiungiPersonaComponent
+    AggiungiPersonaComponent,
+    NavbarComponent,
+    RicercaPersonaComponent
   ],
   imports: [
     BrowserModule,

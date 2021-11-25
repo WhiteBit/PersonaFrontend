@@ -4,12 +4,14 @@ import { AggiungiPersonaComponent } from './aggiungi-persona/aggiungi-persona.co
 import { HomeComponent } from './home/home.component';
 import { ListapersoneComponent } from './listapersone/listapersone.component';
 import { ModificaPersonaComponent } from './modifica-persona/modifica-persona.component';
+import { RicercaPersonaComponent } from './ricerca-persona/ricerca-persona.component';
 
 const routes: Routes = [
   {path: "", component: HomeComponent},
   {path: "listapersone", component: ListapersoneComponent},
   {path: 'modifica/:id', component: ModificaPersonaComponent},
   {path: 'aggiungi', component: AggiungiPersonaComponent},
+  { path: 'ricerca', component: RicercaPersonaComponent }
 ];
 
 @NgModule({

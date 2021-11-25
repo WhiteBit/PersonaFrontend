@@ -20,11 +20,10 @@ export class PersonaserviceService {
   }
 
   eliminaPersona(id:number): Observable<Persona>{
-     return this.http.delete<Persona>(`http://localhost:8080/persona/delete/${id}`, this.httpOptions);
+     return this.http.delete<Persona>(`http://localhost:8080/persona/rimuovi/${id}`, this.httpOptions);
   }
 
   modificaPersona(p: Persona): Observable<Persona>{
-    console.log(p);
     return this.http.post<Persona>("http://localhost:8080/persona/modifica", p, this.httpOptions);
   }
 

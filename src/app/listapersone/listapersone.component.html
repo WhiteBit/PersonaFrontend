@@ -7,9 +7,11 @@
         <span>Cognome: {{pers.lastname}}</span><br>
         <span>Email: {{pers.email}}</span><br>
         <span>Età: {{pers.eta}}</span><br>
-        <button [routerLink]="['/modifica',pers.id]">Modifica</button> <!--Al click si va alla pagina modifica passandogli l'id per sapere quale persona modificare-->
+       <button [routerLink]="['/modifica',pers.id]">Modifica</button> <!-- Al click si va alla pagina modifica passandogli l'id per sapere quale persona modificare-->
+        <div *ngIf="pers.id">
+            <button (click)="eliminaPersona(pers.id)">Elimina</button>
+        </div>
         
-        <button (click)="eliminaPersona(pers.id)">Elimina</button>
     </li>
 </ul>
 </div>

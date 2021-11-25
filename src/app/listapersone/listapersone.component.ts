@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Persona } from 'src/Persona';
 import { PersonaserviceService } from '../personaservice.service';
 
@@ -10,7 +11,10 @@ import { PersonaserviceService } from '../personaservice.service';
 export class ListapersoneComponent implements OnInit {
 
   persone: Persona [] = [];
-  constructor(private personaService: PersonaserviceService) { }
+  constructor(
+    private personaService: PersonaserviceService,
+    private router: Router,
+    ) { }
 
   ngOnInit(): void {
     this.getPersona(); //al caricamento della pagina visualizziamo tutte le persone
@@ -21,6 +25,6 @@ export class ListapersoneComponent implements OnInit {
   }
 
   eliminaPersona(id:number){
-    return this.personaService.eliminaPersona(id).subscribe(() => this.getPersona())
+    return this.personaService.eliminaPersona(id).subscribe(() => {this.personaService.getPersona(); window.location.reload();});
   }
 }

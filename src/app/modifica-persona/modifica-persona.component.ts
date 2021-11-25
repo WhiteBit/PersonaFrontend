@@ -45,7 +45,7 @@ export class ModificaPersonaComponent implements OnInit {
     "lastname": this.checkoutForm.get('lastname')?.value,
     "email": this.checkoutForm.get('email')?.value,
     "eta": this.checkoutForm.get('eta')?.value}; //salviamo in p1 tutti i nuovi dati
-    return this.PersonaService.modificaPersona(p1).subscribe(() => {this.PersonaService.getPersona(); this.router.navigateByUrl('/listapersone')}) //dopo aver fatto la modifica torniamo alla pagina specificata
+    return this.PersonaService.modificaPersona(p1).subscribe(() => {console.log(1); this.PersonaService.getPersona(); this.router.navigateByUrl('/listapersone')}) //dopo aver fatto la modifica torniamo alla pagina specificata
   }
 
 }

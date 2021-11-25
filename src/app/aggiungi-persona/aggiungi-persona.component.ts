@@ -11,7 +11,7 @@ import { PersonaserviceService } from '../personaservice.service';
 })
 export class AggiungiPersonaComponent implements OnInit {
 
-  checkoutForm = this.formBuilder.group({name: '', lastname: '' ,email:'',eta:''});
+  checkoutForm = this.formBuilder.group({name: '', lastname: '' , email: '', eta: ''});
   
   constructor(
     private formBuilder: FormBuilder,
@@ -24,11 +24,16 @@ export class AggiungiPersonaComponent implements OnInit {
 
   onSubmit(){ // quando si fa il submit del form
     let p1: Persona = {
-    "name": this.checkoutForm.get('name')?.value,
-    "lastname": this.checkoutForm.get('lastname')?.value,
-    "email": this.checkoutForm.get('email')?.value,
-    "eta": this.checkoutForm.get('eta')?.value}; //salviamo in p1 tutti i nuovi dati
-    return this.PersonaService.aggiungiPersona(p1).subscribe(() => {this.PersonaService.getPersona(); this.router.navigateByUrl('/listapersone')}) //dopo aver fatto la modifica torniamo alla pagina specificata
+      "name": this.checkoutForm.get('name')?.value,
+      "lastname": this.checkoutForm.get('lastname')?.value,
+      "email": this.checkoutForm.get('email')?.value,
+      "eta": this.checkoutForm.get('eta')?.value
+    }; //salviamo in p1 tutti i nuovi dati
+
+    return this.PersonaService.aggiungiPersona(p1).subscribe(() => {
+      this.PersonaService.getPersona();
+      this.router.navigateByUrl('/listapersone');
+    }) //dopo aver fatto la modifica torniamo alla pagina specificata
   }
 
 }

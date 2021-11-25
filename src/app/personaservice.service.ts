@@ -22,12 +22,18 @@ export class PersonaserviceService {
   eliminaPersona(id:number): Observable<Persona>{
      return this.http.delete<Persona>(`http://localhost:8080/persona/delete/${id}`, this.httpOptions);
   }
-  modificaPersona(p: Persona): Observable<String>{
+
+  modificaPersona(p: Persona): Observable<Persona>{
     console.log(p);
-    return this.http.post<String>("http://localhost:8080/persona/modifica", p ,this.httpOptions);
+    return this.http.post<Persona>("http://localhost:8080/persona/modifica", p, this.httpOptions);
   }
 
   getPersonaId(id: number): Observable<Persona>{
     return this.http.get<Persona>(`http://localhost:8080/persona/perid/${id}`, this.httpOptions);
   }
+
+  aggiungiPersona(p: Persona): Observable<Persona>{
+    return this.http.post<Persona>("http://localhost:8080/persona/aggiungi", p, this.httpOptions);
+  }
+
 }

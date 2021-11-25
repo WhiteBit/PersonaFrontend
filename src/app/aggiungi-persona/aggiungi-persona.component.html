@@ -1,0 +1,24 @@
+
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+        <!-- 2 con il formgroup ci salviamo tutti i campi e li usiamo nel .ts-->
+        <div>
+            <label for="name"> Name </label>
+            <input id="name" type="text" formControlName="name">
+            <!-- 1 Con ngmodel riempiamo i campi del form con i dati della persona nel .ts
+                                                                                                e riceviamo gli eventuali cambiamenti scritti in input-->
+        </div>
+        <div>
+            <label for="lastname"> lastname </label>
+            <input id="lastname" type="text" formControlName="lastname">
+        </div>
+        <div>
+            <label for="email"> email </label>
+            <input id="email" type="email" formControlName="email">
+        </div>
+        <div>
+            <label for="eta"> eta </label>
+            <input id="eta" type="number" formControlName="eta">
+        </div>
+        <button class="button" type="submit">Aggiungi</button>
+    </form>
+

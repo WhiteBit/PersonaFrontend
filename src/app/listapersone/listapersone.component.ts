@@ -13,11 +13,11 @@ export class ListapersoneComponent implements OnInit {
   constructor(private personaService: PersonaserviceService) { }
 
   ngOnInit(): void {
-    this.getPersona();
+    this.getPersona(); //al caricamento della pagina visualizziamo tutte le persone
   }
 
   getPersona(){
-    return this.personaService.getPersona().subscribe(persone => this.persone = persone);
+    return this.personaService.getPersona().subscribe(persone => this.persone = persone); //ci iscriviamo e usiamo la funzione del servizio
   }
 
   eliminaPersona(id:number){

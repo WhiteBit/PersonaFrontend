@@ -16,14 +16,14 @@ export class ModificaPersonaComponent implements OnInit {
   p!:Persona;
   p1!:Persona;
 
-  onSubmit(){
+  onSubmit(){ // quando si fa il submit del form
     const routeParams = this.route.snapshot.paramMap; 
-    const IdFromRoute = Number(routeParams.get('id'));
+    const IdFromRoute = Number(routeParams.get('id')); //prendiamo l'id dall'url
     this.p1= {"id":IdFromRoute,
     "name": this.checkoutForm.get('name')?.value,
     "lastname": this.checkoutForm.get('lastname')?.value,
     "email": this.checkoutForm.get('email')?.value,
-    "eta": this.checkoutForm.get('eta')?.value};
+    "eta": this.checkoutForm.get('eta')?.value}; //salviamo in p1 tutti i nuovi dati
     console.log(this.p1);
     return this.PersonaService.modificaPersona(this.p).subscribe(() => this.PersonaService.getPersona())
   }
@@ -34,15 +34,15 @@ export class ModificaPersonaComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    // First get the product id from the current route. 
+    // First get the person id from the current route. 
     const routeParams = this.route.snapshot.paramMap; 
-    const IdFromRoute = Number(routeParams.get('id')); // Find the product that correspond with the id provided in route. 
+    const IdFromRoute = Number(routeParams.get('id')); // Find the person that correspond with the id provided in route. 
     this.getPersonaId(IdFromRoute);
     console.log(IdFromRoute);
     
   }
 
   getPersonaId(id: number){
-    this.PersonaService.getPersonaId(id).subscribe(p => this.p=p);
+    this.PersonaService.getPersonaId(id).subscribe(p => this.p=p); //qui prendiamo la persona e la usiamo per riempire i campi del form nell'html
   }
 }

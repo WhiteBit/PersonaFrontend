@@ -16,7 +16,7 @@ export class PersonaserviceService {
   constructor(private http: HttpClient) { }
 
   getPersona(): Observable<Persona[]>{
-    return this.http.get<Persona[]>("http://localhost:8080/persona/visualizza");
+    return this.http.get<Persona[]>("http://localhost:8080/persona/visualizza"); //si collega alla funzione del backend che fa visualizzare tutte le persone
   }
 
   eliminaPersona(id:number): Observable<Persona>{
